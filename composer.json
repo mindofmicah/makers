@@ -1,0 +1,21 @@
+{
+    "name": "mindofmicah/makers",
+    "type": "library",
+    "description": "Hold my commands for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Micah Eschbacher"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "mockery/mockery":"dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": { "mindofmicah\\Makers": "src/" }
+    }
+}
