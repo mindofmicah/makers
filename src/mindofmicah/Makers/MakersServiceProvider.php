@@ -2,7 +2,6 @@
 
 use mindofmicah\Makers\Commands;
 
-use Way\Generators\Cache;
 use Illuminate\Support\ServiceProvider;
 
 class MakersServiceProvider extends ServiceProvider {
@@ -21,21 +20,7 @@ class MakersServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        new Commands\ValidatorCommand();
-
-        /*$this->commands(
-			'generate.model',
-			'generate.controller',
-			'generate.test',
-			'generate.scaffold',
-			'generate.resource',
-			'generate.view',
-			'generate.migration',
-			'generate.seed',
-			'generate.form',
-			'generate.pivot'
-		);*/
+        $this->app['wd.validate'] = new Commands\ValidatorCommand();
+        $this->commands('wd.validate');
 	}
-
-
 }
