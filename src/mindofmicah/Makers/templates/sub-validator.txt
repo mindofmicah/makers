@@ -1,0 +1,8 @@
+<?php
+namespace $namespace;
+
+class $model extends Validator 
+{
+    protected static $rules = array($rules_string
+    );
+}

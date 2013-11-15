@@ -1,0 +1,29 @@
+<?php
+namespace $namespace;
+use Illuminate\Validator as V
+
+abstract class Validator
+{
+    protected $validator;
+    protected $errors;
+
+    public function __construct(V $validator)
+    {
+        $this->validator = $validator;
+    }
+    public function validate($input)
+    {
+        $this->validator->make($input, static::$rules);
+
+        if ($this->validator->fails()) {
+            $this->errors = $this->validator->errors;
+            return false;
+        }
+
+        return true;
+    }    
+    public function errors()
+    {
+        return $this->errors;
+    }
+}
